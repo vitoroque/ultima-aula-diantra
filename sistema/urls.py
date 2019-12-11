@@ -20,5 +20,6 @@ from landing import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('alunos/cadastro', views.index),
     path('alunos/lista', views.listar),
 ]

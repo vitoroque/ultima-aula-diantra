@@ -7,7 +7,7 @@
     <p><a class="listagem" href="/alunos/lista">Clique aqui, para ver o que já está cadastrado!</a></p>
     <p>{{sucesso}}</p>
 
-    <form action="/coachs/cadastro" method="post">
+    <form action="/alunos/cadastro" method="post">
         {% csrf_token %}
         <label for="email">Email: </label>
         <input name="email" type="email" required>
