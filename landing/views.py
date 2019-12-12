@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Aluno, Usuario
 
 # Create your views here.
@@ -18,4 +18,16 @@ def index(request):
     return render(request, 'index.html')
 
 def listar(request):
-    return render(request, 'lista.html')
+    listar_frase = Aluno.objects.filter(ativo=True).all()
+    args = {
+        'listar_frase': listar_frase 
+    }
+    return render(request, 'lista.html', args)
+
+def deletar(request):
+    item = Aluno.objects.get(id=id)
+    if item is not None:
+        item.ativo = false
+        item.save()
+        return redirect('aluno/listar')
+    return render(request,'lista.html')
