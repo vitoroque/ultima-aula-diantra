@@ -30,4 +30,6 @@ def deletar(request):
         item.ativo = false
         item.save()
         return redirect('aluno/listar')
-    return render(request,'lista.html')
+        return render(request,'lista.html')
+def home(request):
+    return render(request,'home.html')
